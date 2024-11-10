@@ -35,7 +35,7 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["backend/entrypoint-e2e/**/*", "backend/exercise-e2e/**/*"]
+      "exclude": []
     }
   ]
 }

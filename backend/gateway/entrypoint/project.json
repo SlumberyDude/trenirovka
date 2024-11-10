@@ -1,0 +1,26 @@
+{
+  "name": "gateway-entrypoint",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "backend/gateway/entrypoint/src",
+  "projectType": "application",
+  "tags": ["domain:gateway", "type:entrypoint"],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "gateway-entrypoint:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "gateway-entrypoint:build:development"
+        },
+        "production": {
+          "buildTarget": "gateway-entrypoint:build:production"
+        }
+      }
+    }
+  }
+}

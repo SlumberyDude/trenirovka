@@ -1,0 +1,26 @@
+{
+  "name": "exercise-entrypoint",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "backend/exercise/entrypoint/src",
+  "projectType": "application",
+  "tags": ["domain:exercise"],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "exercise-entrypoint:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "exercise-entrypoint:build:development"
+        },
+        "production": {
+          "buildTarget": "exercise-entrypoint:build:production"
+        }
+      }
+    }
+  }
+}
